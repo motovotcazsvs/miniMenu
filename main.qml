@@ -144,8 +144,8 @@ Window {
 
                 Text {
                     id: nameButton1
-                    x: 20
-                    y: 135
+                    x: 50
+                    y: 125
 
                     text: qsTr("ИЗМЕРЕНИЕ")
                     color: (but1.pressed || but2.pressed || but3.pressed || but1_1.pressed|| but1_2.pressed)
@@ -462,8 +462,8 @@ Window {
 
                 Text {
                     id: nameButton3
-                    x: 65
-                    y: 143
+                    x: 53
+                    y: 123
                     text: qsTr("РЕЗУЛЬТАТЫ")
                     color: (but7.pressed || but8.pressed || but9.pressed || but3_1.pressed|| but3_2.pressed)
                     ? "white"
@@ -591,8 +591,8 @@ Window {
 
                 Text {
                     id: nameButton4
-                    x: 78
-                    y: 130
+                    x: 60
+                    y: 112
                     text: qsTr("КОНТРОЛЬ<br>КАЧЕСТВА")
                     color: (but10.pressed || but11.pressed || but12.pressed || but4_1.pressed|| but4_2.pressed)
                     ? "white"
@@ -881,8 +881,8 @@ Window {
 
                 Text {
                     id: nameButton6
-                    x: 80
-                    y: 140
+                    x: 61
+                    y: 127
                     text: qsTr("ОШИБКА")
                     color: "#979A9B"
                     font.family: "Helvetica"
@@ -1007,8 +1007,8 @@ Window {
 
                 Text {
                     id: nameButton7
-                    x: 67
-                    y: 145
+                    x: 49
+                    y: 125
                     text: qsTr("СЛУЖЕБНЫЕ")
                     color: "#66B2CC"
                     font.family: "Helvetica"
@@ -1133,8 +1133,8 @@ Window {
 
                 Text {
                     id: nameButton8
-                    x: 65
-                    y: 135
+                    x: 45
+                    y: 115
                     text: qsTr("КАЛИБРОВКА")
                     color: "#979A9B"
                     font.family: "Helvetica"
@@ -1145,8 +1145,8 @@ Window {
 
                 Text {
                     id: textTime
-                    x: 98
-                    y: 155
+                    x: 78
+                    y: 135
                     text: "00:00"
                     color: "#979A9B"
                     font.family: "Helvetica"
