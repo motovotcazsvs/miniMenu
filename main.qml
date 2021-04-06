@@ -15,10 +15,12 @@ Window {
 
     //property real buttons_width: 230
     //property real buttons_height: 240
-    property real buttons_width: 171
-    property real buttons_height: 196
+    //property real buttons_width: 171
+    //property real buttons_height: 196
     //property real buttons_width: 157
     //property real buttons_height: 180
+    property real buttons_width: 191
+    property real buttons_height: 219
 
     property real mouse_range1_x: 22
     property real mouse_range1_y: 52
@@ -41,6 +43,15 @@ Window {
     property real mouse_range5_width: mouse_range4_width
     property real mouse_range5_height: mouse_range4_height
 
+    property real recBut148X: 128
+    property real recBut26X: 17
+    property real recBut37X: 239
+    property real recBut23Y: 220
+    property real recBut45Y: 397
+    property real recBut67Y: 573
+    property real shiftX: 65
+    property real shiftY: 30
+    property real clearances: 20
 
     property int hours
     property int minutes
@@ -116,10 +127,11 @@ Window {
             id: recB1
             width: buttons_width
             height: buttons_height
-            //color: "transparent"
-            border.color: "black"
-            x: 128
-            y: 44
+            color: "transparent"
+            //border.color: "black"
+            x: recBut148X + shiftX
+            y: ((44 + shiftY) + (clearances * 2))
+
 
 
             Image {
@@ -132,8 +144,9 @@ Window {
 
                 Text {
                     id: nameButton1
-                    x: 70
-                    y: 145
+                    x: 20
+                    y: 135
+
                     text: qsTr("ИЗМЕРЕНИЕ")
                     color: (but1.pressed || but2.pressed || but3.pressed || but1_1.pressed|| but1_2.pressed)
                     ? "white"
@@ -150,7 +163,7 @@ Window {
                       color: "white"
                       radius: 0
                       samples: 3
-                  }
+                }
 
             }
 
@@ -262,8 +275,8 @@ Window {
             height: buttons_height
             color: "transparent"
             //border.color: "black"
-            x: 17
-            y: 220
+            x: ((recBut26X + shiftX) + clearances)
+            y: ((recBut23Y + shiftY) + clearances)
             //z: -1
 
             Image {
@@ -436,8 +449,8 @@ Window {
             height: buttons_height
             color: "transparent"
             //border.color: "black"
-            x: 239
-            y: 220
+            x: ((recBut37X + shiftX) - clearances)
+            y: ((recBut23Y + shiftY) + clearances)
             //z: -1
             Image {
                 id: imBye3
@@ -565,8 +578,8 @@ Window {
             height: buttons_height
             color: "transparent"
             //border.color: "black"
-            x: 128
-            y: 397
+            x: recBut148X + shiftX
+            y: recBut45Y + shiftY
             //z: -1
             Image {
                 id: imBye4
@@ -694,8 +707,8 @@ Window {
             height: buttons_height
             color: "transparent"
             //border.color: "black"
-            x: 350
-            y: 397
+            x: ((350 + shiftX) - clearances)
+            y: recBut45Y + shiftY
             //z: -1
             Image {
                 id: imBye5
@@ -855,8 +868,8 @@ Window {
             height: buttons_height
             color: "transparent"
             //border.color: "black"
-            x: 17
-            y: 573
+            x: ((recBut26X + shiftX) + clearances)
+            y: ((recBut67Y + shiftY) - clearances)
             //z: -1
             Image {
                 id: imBye6
@@ -981,8 +994,8 @@ Window {
             height: buttons_height
             color: "transparent"
             //border.color: "black"
-            x: 239
-            y: 573
+            x: ((recBut37X + shiftX) - clearances)
+            y: ((recBut67Y + shiftY) - clearances)
             //z: -1
             Image {
                 id: imBye7
@@ -1107,8 +1120,8 @@ Window {
             height: buttons_height
             color: "transparent"
             //border.color: "black"
-            x: 128
-            y: 750
+            x: recBut148X + shiftX
+            y: ((750 + shiftY) - (clearances * 2))
             //z: -1
             Image {
                 id: imBye8
@@ -1245,8 +1258,8 @@ Window {
             height: buttons_height / 2
             color: "transparent"
             //border.color: "black"
-            x: 360
-            y: 127
+            x: ((337 + shiftX) - clearances)
+            y: ((117 + shiftY) + (clearances * 2))
             //z: -1
 
             Image {
@@ -1264,8 +1277,8 @@ Window {
             height: buttons_height / 4
             color: "transparent"
             //border.color: "black"
-            x: 80
-            y: 170
+            x: ((69 + shiftX) + clearances)
+            y: ((154 + shiftY) + (clearances * 2))
             //z: -1
 
             Image {
@@ -1282,8 +1295,8 @@ Window {
             height: buttons_height / 2
             color: "transparent"
             //border.color: "black"
-            x: 360
-            y: 779
+            x: ((337 + shiftX) - clearances)
+            y: ((776 + shiftY) - (clearances * 2))
             //z: -1
 
             Image {

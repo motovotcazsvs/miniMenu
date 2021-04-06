@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>images/МЕНЮ Измерения 1 страница2.png</file>
-        <file>images/МЕНЮ Калибровка 1 страница.png</file>
         <file>images/МЕНЮ Калибровка 1 страница2.png</file>
         <file>images/МЕНЮ Калибровка 1 страница3.png</file>
         <file>images/МЕНЮ Контроль качества 1 страница.png</file>
@@ -22,5 +21,6 @@
         <file>images/МЕНЮ Часы 1 страница маленькая стрелка.png</file>
         <file>images/МЕНЮ Часы 1 страница.png</file>
         <file>images/МЕНЮ Измерения 1 страница.png</file>
+        <file>images/МЕНЮ Калибровка 1 страница.png</file>
     </qresource>
 </RCC>
