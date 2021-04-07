@@ -700,14 +700,14 @@ Window {
             }
 
         }
-/*
+
         Rectangle {
             id: recB5
             width: buttons_width
             height: buttons_height
             color: "transparent"
             //border.color: "black"
-            x: ((350 + shiftX) - clearances)
+            x: ((350 + shiftX) - (clearances * 2))
             y: recBut45Y + shiftY
             //z: -1
             Image {
@@ -727,10 +727,10 @@ Window {
 
 
 
-
+/*
                 source: (but13.pressed || but14.pressed || but15.pressed || but5_1.pressed|| but5_2.pressed)
                     ? "images/МЕНЮ Разогрев 1 страница2.png"
-                    : "images/МЕНЮ Разогрев 1 страница.png"
+                    : "images/МЕНЮ Разогрев 1 страница.png"*/
 
                 Text {
                     id: nameButton5
@@ -742,11 +742,11 @@ Window {
                             return "white"
                         }
                         else {
-                            if(0) return "images/МЕНЮ Разогрев 1 страница3.png"
-                            else return "images/МЕНЮ Разогрев 1 страница.png"
+                            if(0) return "#979A9B"
+                            else return "#979A9B"
                         }
-
-                    color: "#979A9B"
+                    }
+                    //color: "#979A9B"
                     font.family: "Helvetica"
                     font.bold: true
                     font.pixelSize: 17
@@ -861,7 +861,7 @@ Window {
             }
 
         }
-*/
+
         Rectangle {
             id: recB6
             width: buttons_width
