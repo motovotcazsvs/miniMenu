@@ -8,9 +8,9 @@ import QtGraphicalEffects 1.0
 Window {
     id: winn
     visible: true
-    visibility: Window.FullScreen //для малинки
-    //width: 600 //для пк
-    //height: 1024 //для пк
+    //visibility: Window.FullScreen //для малинки
+    width: 600 //для пк
+    height: 1024 //для пк
     flags: Qt.FramelessWindowHint
 
     //property real buttons_width: 230
@@ -58,7 +58,8 @@ Window {
     property int hours
     property int minutes
     property int seconds
-
+    property real clock_arrow_shift_x: 0//-20
+    property real clock_arrow_shift_y: 0//-11
 
     function timeChanged() {
         var date = new Date();
@@ -288,8 +289,8 @@ Window {
                 source: "images/МЕНЮ Часы 1 страница.png"
 
                 Rectangle {
-                    x: 114
-                    y: 96
+                    x: 94 + clock_arrow_shift_x
+                    y: 85 + clock_arrow_shift_y
                     //color: "#818282"
                     color: "transparent"
                     width: 14
@@ -301,8 +302,8 @@ Window {
 
             Image {
                 id: imArrow1
-                x: 118
-                y: 76
+                x: 98 + clock_arrow_shift_x
+                y: 65 + clock_arrow_shift_y
                 width: 21
                 height: 33
                 source: "images/МЕНЮ Часы 1 страница маленькая стрелка.png"
@@ -310,7 +311,6 @@ Window {
                 transform: Rotation {
                     id: hourRotation
                     angle: (hours * 30) - 29
-                    //angle: (minutes * 6) - 29
                     origin.x: 4
                     origin.y: 28
                 }
@@ -318,8 +318,8 @@ Window {
 
             Image {
                 id: imArrow2
-                x: 118
-                y: 73
+                x: 98 + clock_arrow_shift_x
+                y: 62 + clock_arrow_shift_y
                 width: 38
                 height: 36
 
@@ -328,7 +328,6 @@ Window {
                 transform: Rotation {
                     id: minuteRotation
                     angle: (minutes * 6) - 48
-                    //angle: (seconds * 6) - 48
                     origin.x: 4
                     origin.y: 31
                 }
@@ -336,8 +335,8 @@ Window {
 
             Image {
                 id: imArrow3
-                x: 120
-                y: 69
+                x: 100 + clock_arrow_shift_x
+                y: 58 + clock_arrow_shift_y
                 width: 20
                 height: 40
 
@@ -345,7 +344,6 @@ Window {
 
                 transform: Rotation {
                     id: secondRotation
-                    //angle: (seconds * 6) - 27
                     angle: (seconds * 6) - 27
                     origin.x: 2
                     origin.y: 35
@@ -464,7 +462,7 @@ Window {
 
                 Text {
                     id: nameButton3
-                    x: 53
+                    x: 44
                     y: 123
                     text: qsTr("РЕЗУЛЬТАТЫ")
                     color: (but7.pressed || but8.pressed || but9.pressed || but3_1.pressed|| but3_2.pressed)
@@ -473,6 +471,15 @@ Window {
                     font.family: "Helvetica"
                     font.bold: true
                     font.pixelSize: 17
+                }
+
+                DropShadow {
+                      anchors.fill: nameButton3
+                      source: nameButton3
+                      horizontalOffset: 2
+                      color: "white"
+                      radius: 0
+                      samples: 3
                 }
 
             }
@@ -593,7 +600,7 @@ Window {
 
                 Text {
                     id: nameButton4
-                    x: 60
+                    x: 55
                     y: 112
                     text: qsTr("КОНТРОЛЬ<br>КАЧЕСТВА")
                     color: (but10.pressed || but11.pressed || but12.pressed || but4_1.pressed|| but4_2.pressed)
@@ -602,6 +609,15 @@ Window {
                     font.family: "Helvetica"
                     font.bold: true
                     font.pixelSize: 17
+                }
+
+                DropShadow {
+                      anchors.fill: nameButton4
+                      source: nameButton4
+                      horizontalOffset: 2
+                      color: "white"
+                      radius: 0
+                      samples: 3
                 }
 
             }
@@ -736,8 +752,8 @@ Window {
 
                 Text {
                     id: nameButton5
-                    x: 78
-                    y: 130
+                    x: 58
+                    y: 115
                     text: qsTr("РАЗОГРЕВ")
                     color: {
                         if(but13.pressed || but14.pressed || but15.pressed || but5_1.pressed || but5_2.pressed){
@@ -756,13 +772,22 @@ Window {
 
                 Text {
                     id: textTemperature
-                    x: 92
-                    y: 150
+                    x: 72
+                    y: 135
                     text: "-0.8 °C"
                     color: "#979A9B"
                     font.family: "Helvetica"
                     font.bold: true
                     font.pixelSize: 17
+                }
+
+                DropShadow {
+                      anchors.fill: nameButton5
+                      source: nameButton5
+                      horizontalOffset: 2
+                      color: "white"
+                      radius: 0
+                      samples: 3
                 }
 
             }
@@ -891,6 +916,15 @@ Window {
                     font.bold: true
                     font.pixelSize: 17
                 }
+
+                DropShadow {
+                      anchors.fill: nameButton6
+                      source: nameButton6
+                      horizontalOffset: 2
+                      color: "white"
+                      radius: 0
+                      samples: 3
+                }
             }
 
             Rectangle {
@@ -1009,13 +1043,22 @@ Window {
 
                 Text {
                     id: nameButton7
-                    x: 49
+                    x: 45
                     y: 125
                     text: qsTr("СЛУЖЕБНЫЕ")
                     color: "#66B2CC"
                     font.family: "Helvetica"
                     font.bold: true
                     font.pixelSize: 17
+                }
+
+                DropShadow {
+                      anchors.fill: nameButton7
+                      source: nameButton7
+                      horizontalOffset: 2
+                      color: "white"
+                      radius: 0
+                      samples: 3
                 }
             }
 
@@ -1135,13 +1178,22 @@ Window {
 
                 Text {
                     id: nameButton8
-                    x: 45
+                    x: 40
                     y: 115
                     text: qsTr("КАЛИБРОВКА")
                     color: "#979A9B"
                     font.family: "Helvetica"
                     font.bold: true
                     font.pixelSize: 17
+                }
+
+                DropShadow {
+                      anchors.fill: nameButton8
+                      source: nameButton8
+                      horizontalOffset: 2
+                      color: "white"
+                      radius: 0
+                      samples: 3
                 }
 
 
@@ -1270,6 +1322,15 @@ Window {
                 anchors.margins: 1
                 source: "images/МЕНЮ пустой шестиугольник 1 страница.png"
             }
+
+            MouseArea {
+                id: butExit
+                anchors.fill: imBye9
+                anchors.margins: 10
+                onClicked: Qt.quit();
+            }
+
+
 
         }
 
