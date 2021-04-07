@@ -8,9 +8,9 @@ import QtGraphicalEffects 1.0
 Window {
     id: winn
     visible: true
-    //visibility: Window.FullScreen //для малинки
-    width: 600 //для пк
-    height: 1024 //для пк
+    visibility: Window.FullScreen //для малинки
+    //width: 600 //для пк
+    //height: 1024 //для пк
     flags: Qt.FramelessWindowHint
 
     //property real buttons_width: 230
@@ -19,8 +19,10 @@ Window {
     //property real buttons_height: 196
     //property real buttons_width: 157
     //property real buttons_height: 180
+    //property real buttons_width: 191
+    //property real buttons_height: 219
     property real buttons_width: 191
-    property real buttons_height: 219
+    property real buttons_height: 210
 
     property real mouse_range1_x: 22
     property real mouse_range1_y: 52
@@ -46,11 +48,11 @@ Window {
     property real recBut148X: 128
     property real recBut26X: 17
     property real recBut37X: 239
-    property real recBut23Y: 220
+    property real recBut23Y: 225
     property real recBut45Y: 397
-    property real recBut67Y: 573
-    property real shiftX: 65
-    property real shiftY: 30
+    property real recBut67Y: 568
+    property real shiftX: 33
+    property real shiftY: 18
     property real clearances: 20
 
     property int hours
@@ -130,7 +132,7 @@ Window {
             color: "transparent"
             //border.color: "black"
             x: recBut148X + shiftX
-            y: ((44 + shiftY) + (clearances * 2))
+            y: ((54 + shiftY) + (clearances * 2))
 
 
 
@@ -451,7 +453,7 @@ Window {
             //border.color: "black"
             x: ((recBut37X + shiftX) - clearances)
             y: ((recBut23Y + shiftY) + clearances)
-            //z: -1
+            z: -1
             Image {
                 id: imBye3
                 anchors.fill: recB3
@@ -709,7 +711,7 @@ Window {
             //border.color: "black"
             x: ((350 + shiftX) - (clearances * 2))
             y: recBut45Y + shiftY
-            //z: -1
+            z: -1
             Image {
                 id: imBye5
                 anchors.fill: recB5
@@ -996,7 +998,7 @@ Window {
             //border.color: "black"
             x: ((recBut37X + shiftX) - clearances)
             y: ((recBut67Y + shiftY) - clearances)
-            //z: -1
+            z: -1
             Image {
                 id: imBye7
                 anchors.fill: recB7
@@ -1121,7 +1123,7 @@ Window {
             color: "transparent"
             //border.color: "black"
             x: recBut148X + shiftX
-            y: ((750 + shiftY) - (clearances * 2))
+            y: ((740 + shiftY) - (clearances * 2))
             //z: -1
             Image {
                 id: imBye8
@@ -1259,7 +1261,7 @@ Window {
             color: "transparent"
             //border.color: "black"
             x: ((337 + shiftX) - clearances)
-            y: ((117 + shiftY) + (clearances * 2))
+            y: ((127 + shiftY) + (clearances * 2))
             //z: -1
 
             Image {
@@ -1278,7 +1280,7 @@ Window {
             color: "transparent"
             //border.color: "black"
             x: ((69 + shiftX) + clearances)
-            y: ((154 + shiftY) + (clearances * 2))
+            y: ((161 + shiftY) + (clearances * 2))
             //z: -1
 
             Image {
@@ -1296,7 +1298,7 @@ Window {
             color: "transparent"
             //border.color: "black"
             x: ((337 + shiftX) - clearances)
-            y: ((776 + shiftY) - (clearances * 2))
+            y: ((764 + shiftY) - (clearances * 2))
             //z: -1
 
             Image {
