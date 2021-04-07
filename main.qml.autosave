@@ -54,6 +54,7 @@ Window {
     property real clock_arrow_shift_y: 0
 
     property real but_text_size: 17
+    property bool rec_range_color_set: true
 
     function timeChanged() {
         var date = new Date();
@@ -75,6 +76,10 @@ Window {
         }
     }
 
+    function rec_range_color(){
+        return rec_range_color_set ? "red" : "transparent"
+    }
+    
     Timer {
         interval: 100
         repeat: true
@@ -125,7 +130,7 @@ Window {
             width: buttons_width
             height: buttons_height
             color: "transparent"
-            //border.color: "black"
+            border.color: rec_range_color_set ? "black" : "transparent"
             x: recBut148X + shiftX
             y: ((112 + shiftY) + (clearances * 2))
 
@@ -150,7 +155,7 @@ Window {
                 width: mouse_range1_width
                 height: mouse_range1_height
                 color: "transparent"
-                border.color: "red"
+                border.color: rec_range_color()
 
                 MouseArea {
                     id: but1
@@ -193,8 +198,7 @@ Window {
                 width: mouse_range2_width
                 height: mouse_range2_height
                 color: "transparent"
-                border.color: "red"
-
+                border.color: rec_range_color()
                 MouseArea {
                     id: but2
                     anchors.fill: rec2
@@ -213,7 +217,7 @@ Window {
                 width: mouse_range3_width
                 height: mouse_range3_height
                 color: "transparent"
-                border.color: "red"
+                border.color: rec_range_color()
 
                 MouseArea {
                     id: but3
@@ -233,7 +237,7 @@ Window {
                 width: mouse_range4_width
                 height: mouse_range4_height
                 color: "transparent"
-                border.color: "red"
+                border.color: rec_range_color()
 
                 MouseArea {
                     id: but1_1
@@ -253,7 +257,7 @@ Window {
                 width: mouse_range5_width
                 height: mouse_range5_height
                 color: "transparent"
-                border.color: "red"
+                border.color: rec_range_color()
 
                 MouseArea {
                     id: but1_2
@@ -272,7 +276,7 @@ Window {
             width: buttons_width
             height: buttons_height
             color: "transparent"
-            //border.color: "black"
+            border.color: rec_range_color_set ? "black" : "transparent"
             x: ((recBut26X + shiftX) + clearances)
             y: ((recBut23Y + shiftY) + clearances)
             //z: -1
@@ -443,7 +447,7 @@ Window {
             width: buttons_width
             height: buttons_height
             color: "transparent"
-            //border.color: "black"
+            border.color: rec_range_color_set ? "black" : "transparent"
             x: ((recBut37X + shiftX) - clearances)
             y: ((recBut23Y + shiftY) + clearances)
             z: -1
@@ -487,7 +491,7 @@ Window {
                 width: mouse_range1_width
                 height: mouse_range1_height
                 color: "transparent"
-                //border.color: "red"
+                border.color: rec_range_color()
 
                 MouseArea {
                     id: but7
@@ -506,7 +510,7 @@ Window {
                 width: mouse_range2_width
                 height: mouse_range2_height
                 color: "transparent"
-                //border.color: "red"
+                border.color: rec_range_color()
 
                 MouseArea {
                     id: but8
@@ -525,7 +529,7 @@ Window {
                 width: mouse_range3_width
                 height: mouse_range3_height
                 color: "transparent"
-                //border.color: "red"
+                border.color: rec_range_color()
 
                 MouseArea {
                     id: but9
@@ -544,7 +548,7 @@ Window {
                 width: mouse_range4_width
                 height: mouse_range4_height
                 color: "transparent"
-                //border.color: "red"
+                border.color: rec_range_color()
 
                 MouseArea {
                     id: but3_1
@@ -563,7 +567,7 @@ Window {
                 width: mouse_range5_width
                 height: mouse_range5_height
                 color: "transparent"
-                //border.color: "red"
+                border.color: rec_range_color()
 
                 MouseArea {
                     id: but3_2
