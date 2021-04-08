@@ -53,8 +53,8 @@ Window {
     property real clock_arrow_shift_x: 0
     property real clock_arrow_shift_y: 0
 
-    property real but_text_size: 17
-    property bool rec_range_color_set: true
+    property real but_text_size: 14
+    property bool rec_range_color_set: false
 
     function timeChanged() {
         var date = new Date();
@@ -621,11 +621,11 @@ Window {
                 anchors.fill: recB5
                 anchors.margins: 1
                 source: {
-                    if(recB5But1.pressed || recB5But2.pressed || recB5But3.pressed || recB5But4.pressed|| recB5But5.pressed){
+                    if(recB5But1.pressed || recB5But2.pressed || recB5But3.pressed || recB5But4.pressed || recB5But5.pressed){
                         return "images/МЕНЮ Разогрев 1 страница2.png"
                     }
                     else {
-                        if(1) return "images/МЕНЮ Разогрев 1 страница3.png"
+                        if(0) return "images/МЕНЮ Разогрев 1 страница3.png"
                         else return "images/МЕНЮ Разогрев 1 страница.png"
                     }
                 }         
@@ -652,15 +652,15 @@ Window {
 
                 Text {
                     id: nameButton5
-                    anchors.bottom: textTemperature.top
-                    anchors.horizontalCenter: textTemperature.horizontalCenter
+                    anchors.bottom: textTemperatureBut5.top
+                    anchors.horizontalCenter: textTemperatureBut5.horizontalCenter
                     text: qsTr("РАЗОГРЕВ")
                     color: {
                         if(recB5But1.pressed || recB5But2.pressed || recB5But3.pressed || recB5But4.pressed|| recB5But5.pressed){
                             return "white"
                         }
                         else {
-                            if(1) return "#EF4C26"
+                            if(0) return "#EF4C26"
                             else return "#979A9B"
                         }
                     }
@@ -670,7 +670,7 @@ Window {
                 }
 
                 Text {
-                    id: textTemperature
+                    id: textTemperatureBut5
                     anchors.bottom: recB5Rec1.bottom
                     anchors.horizontalCenter: recB5Rec1.horizontalCenter
                     text: "-0.8 °C"
@@ -679,7 +679,7 @@ Window {
                             return "white"
                         }
                         else {
-                            if(1) return "#EF4C26"
+                            if(0) return "#EF4C26"
                             else return "#979A9B"
                         }
                     }
@@ -716,8 +716,8 @@ Window {
                               return true
                           }
                       }
-                      anchors.fill: textTemperature
-                      source: textTemperature
+                      anchors.fill: textTemperatureBut5
+                      source: textTemperatureBut5
                       horizontalOffset: 2
                       color: "white"
                       radius: 0
@@ -816,11 +816,19 @@ Window {
                 id: imBye6
                 anchors.fill: recB6
                 anchors.margins: 1
-                source: (recB6But1.pressed || recB6But2.pressed || recB6But3.pressed || recB6But4.pressed|| recB6But5.pressed)
-                    ? "images/МЕНЮ Ошибка 1 страница2.png"
-                    : "images/МЕНЮ Ошибка 1 страница.png"
-
-
+                source: {
+                    if(recB6But1.pressed || recB6But2.pressed || recB6But3.pressed || recB6But4.pressed || recB6But5.pressed){
+                        return "images/МЕНЮ Ошибка 1 страница2.png"
+                    }
+                    else {
+                        if(0){
+                            return "images/МЕНЮ Ошибка 1 страница3.png"
+                        }
+                        else {
+                            return "images/МЕНЮ Ошибка 1 страница.png"
+                        }
+                    }
+                }
             }
 
             Rectangle {
@@ -846,9 +854,19 @@ Window {
                     anchors.bottom: recB6Rec1.bottom
                     anchors.horizontalCenter: recB6Rec1.horizontalCenter
                     text: qsTr("ОШИБКА")
-                    color: (recB6But1.pressed || recB6But2.pressed || recB6But3.pressed || recB6But4.pressed || recB6But5.pressed)
-                    ? "white"
-                    : "#979A9B"
+                    color: {
+                        if(recB6But1.pressed || recB6But2.pressed || recB6But3.pressed || recB6But4.pressed || recB6But5.pressed){
+                            return "white"
+                        }
+                        else {
+                            if(0) {
+                               return "#D82B2B"
+                            }
+                            else {
+                                return "#979A9B"
+                            }
+                        }
+                    }
                     font.family: "Helvetica"
                     font.bold: true
                     font.pixelSize: but_text_size
@@ -856,8 +874,14 @@ Window {
 
                 DropShadow {
                       id: shadowTextBut6
-                      visible: (recB6But1.pressed || recB6But2.pressed || recB6But3.pressed || recB6But4.pressed || recB6But5.pressed)
-                             ? false : true
+                      visible: {
+                          if(recB6But1.pressed || recB6But2.pressed || recB6But3.pressed || recB6But4.pressed || recB6But5.pressed){
+                              return false
+                          }
+                          else {
+                              return true
+                          }
+                      }
                       anchors.fill: nameButton6
                       source: nameButton6
                       horizontalOffset: 2
@@ -1098,9 +1122,19 @@ Window {
                 id: imBye8
                 anchors.fill: recB8
                 anchors.margins: 1
-                source: (recB8But1.pressed || recB8But2.pressed || recB8But3.pressed || recB8But4.pressed|| recB8But5.pressed)
-                    ? "images/МЕНЮ Калибровка 1 страница2.png"
-                    : "images/МЕНЮ Калибровка 1 страница.png"
+                source: {
+                    if(recB8But1.pressed || recB8But2.pressed || recB8But3.pressed || recB8But4.pressed || recB8But5.pressed){
+                        return "images/МЕНЮ Калибровка 1 страница2.png"
+                    }
+                    else {
+                        if(0){
+                            return "images/МЕНЮ Калибровка 1 страница3.png"
+                        }
+                        else {
+                            return "images/МЕНЮ Калибровка 1 страница.png"
+                        }
+                    }
+                }
             }
 
             Rectangle {
@@ -1123,18 +1157,35 @@ Window {
 
                 Text {
                     id: nameButton8
-                    anchors.bottom: textTime.top
-                    anchors.horizontalCenter: textTime.horizontalCenter
+                    anchors.bottom: textTimerBut8.top
+                    anchors.horizontalCenter: textTimerBut8.horizontalCenter
                     text: qsTr("КАЛИБРОВКА")
-                    color: "#979A9B"
+                    color: {
+                        if(recB8But1.pressed || recB8But2.pressed || recB8But3.pressed || recB8But4.pressed|| recB8But5.pressed){
+                            return "white"
+                        }
+                        else {
+                            if(0) return "#C93D76"
+                            else return "#979A9B"
+                        }
+                    }
                     font.family: "Helvetica"
                     font.bold: true
                     font.pixelSize: but_text_size
                 }
 
                 DropShadow {
+                      id: shadowTextBut8
                       anchors.fill: nameButton8
                       source: nameButton8
+                      visible: {
+                          if(recB8But1.pressed || recB8But2.pressed || recB8But3.pressed || recB8But4.pressed|| recB8But5.pressed){
+                              return false
+                          }
+                          else {
+                              return true
+                          }
+                      }
                       horizontalOffset: 2
                       color: "white"
                       radius: 0
@@ -1142,19 +1193,36 @@ Window {
                 }
 
                 Text {
-                    id: textTime
+                    id: textTimerBut8
                     anchors.bottom: recB8Rec1.bottom
                     anchors.horizontalCenter: recB8Rec1.horizontalCenter
                     text: "00:00"
-                    color: "#979A9B"
+                    color: {
+                        if(recB8But1.pressed || recB8But2.pressed || recB8But3.pressed || recB8But4.pressed|| recB8But5.pressed){
+                            return "white"
+                        }
+                        else {
+                            if(0) return "#C93D76"
+                            else return "#979A9B"
+                        }
+                    }
                     font.family: "Helvetica"
                     font.bold: true
                     font.pixelSize: but_text_size
                 }
 
                 DropShadow {
-                      anchors.fill: textTime
-                      source: textTime
+                      id: shadowTexTimerBut8
+                      visible: {
+                          if(recB8But1.pressed || recB8But2.pressed || recB8But3.pressed || recB8But4.pressed|| recB8But5.pressed){
+                              return false
+                          }
+                          else {
+                              return true
+                          }
+                      }
+                      anchors.fill: textTimerBut8
+                      source: textTimerBut8
                       horizontalOffset: 2
                       color: "white"
                       radius: 0
@@ -1257,14 +1325,105 @@ Window {
                 source: "images/МЕНЮ пустой шестиугольник 1 страница.png"
             }
 
-            MouseArea {
-                id: recB9But1
-                anchors.fill: imBye9
-                anchors.margins: 10
-                onClicked: Qt.quit();
+            Rectangle {
+                id:recB9Rec1
+                x: mouse_range1_x / 2
+                y: mouse_range1_y / 2
+                z: 1
+                width: mouse_range1_width / 2
+                height: mouse_range1_height / 2
+                color: "transparent"
+                border.color: rec_range_color()
+
+                MouseArea {
+                    id: recB9But1
+                    anchors.fill: recB9Rec1
+                    onClicked: {
+                        console.log("Button 9999999 clicked.");
+                        stack.push(view2);
+                        Qt.quit();
+                    }
+                }
             }
 
+            Rectangle {
+                id:recB9Rec2
+                anchors.horizontalCenter: recB9Rec1.horizontalCenter
+                anchors.bottom: recB9Rec1.top
+                z: 1
+                width: mouse_range2_width / 2
+                height: mouse_range2_height / 2
+                color: "transparent"
+                border.color: rec_range_color()
+                MouseArea {
+                    id: recB9But2
+                    anchors.fill: recB9Rec2
+                    onClicked: {
+                        console.log("Button 999999 clicked.");
 
+                    }
+                }
+            }
+
+            Rectangle {
+                id:recB9Rec3
+                anchors.horizontalCenter: recB9Rec1.horizontalCenter
+                anchors.top: recB9Rec1.bottom
+                z: 1
+                width: mouse_range3_width / 2
+                height: mouse_range3_height / 2
+                color: "transparent"
+                border.color: rec_range_color()
+
+                MouseArea {
+                    id: recB9But3
+                    anchors.fill: recB9Rec3
+                    onClicked: {
+                        console.log("Button 999999 clicked.");
+
+                    }
+                }
+            }
+
+            Rectangle {
+                id:recB9Rec4
+                anchors.bottom: recB9Rec2.top
+                anchors.horizontalCenter: recB9Rec2.horizontalCenter
+                z: 1
+                width: mouse_range4_width / 2
+                height: mouse_range4_height / 2
+                color: "transparent"
+                border.color: rec_range_color()
+
+                MouseArea {
+                    id: recB9But4
+                    anchors.fill: recB9Rec4
+                    onClicked: {
+                        console.log("Button 999999 clicked.");
+
+                    }
+                }
+            }
+
+            Rectangle {
+                id:recB9Rec5
+                anchors.top: recB9Rec3.bottom
+                anchors.horizontalCenter: recB9Rec3.horizontalCenter
+                z: 1
+                width: mouse_range5_width / 2
+                height: mouse_range5_height / 2
+                color: "transparent"
+                border.color: rec_range_color()
+
+                MouseArea {
+                    id: recB9But5
+                    anchors.fill: recB9Rec5
+                    onClicked: {
+                        console.log("Button 9999999 clicked.");
+
+                    }
+                }
+            }
 
         }
 
